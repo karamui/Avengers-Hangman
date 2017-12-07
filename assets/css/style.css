@@ -1,0 +1,150 @@
+/* ------------------------------------ GENERAL */
+
+div.container {
+	margin: 20px auto;
+	width: 75%;
+}
+
+body {
+	margin: 0px;
+	background-color: #000000;
+	font-family: "Marvel", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 15px;
+	color: #eeeeee !important;
+}
+
+/* ------------------------------------ HEADERS AND TEXT */
+
+h1 {
+	margin: -35px auto 0px auto;
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+}
+
+h2 {
+	margin: 20px auto;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 25px;
+	background-color: #f11e22;
+	text-align: center;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-size: 25px;
+	text-align: center;
+}
+
+p, span {
+	font-family: "Marvel", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	color: #eeeeee;
+}
+
+i {
+	font-style: italic;
+}
+
+b {
+	color: #f11e22;
+	font-weight: bold;
+}
+
+span#wincount {
+	font-size: 25px;
+	color: #eeeeee !important;
+}
+
+p#currentword {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #f11e22;
+	font-size: 25px;
+	font-family: "Permanent Marker",  "Helvetica Neue", Helvetica, sans-serif;
+	color: #eeeeee !important;
+	text-align: center;
+}
+
+p.standout {
+	font-size: 18px;
+	font-weight: bold;
+	color: #f11e22;
+}
+
+span#guesscount, span#alreadyguessed {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+/* ------------------------------------ IMAGES */
+
+img.img-responsive {
+	margin: auto;
+	width: 100%;
+}
+
+/* REFERENCE: https://www.w3schools.com/css/css3_animations.asp*/
+@keyframes example {
+	from {filter: grayscale(0%);}
+	to {filter: grayscale(100%); opacity: 0.75;}
+}
+
+img.img-responsive:hover {
+	animation-name: example;
+	animation-duration: 3s;
+}
+
+img#logo {
+	margin: 25px auto 25px auto;
+	animation: none !important;
+}
+
+div#victory {
+	margin: 20px auto 0px auto;
+	padding: 10px;
+	border: 1px solid #f11e22;
+}
+
+/* ------------------------------------ FOOTER */
+
+p#disclaimer {
+	margin: 25px auto;
+	padding: 10px;
+	background-color: #f11e22;
+	font-size: 12px;
+	text-align: center;
+}
+
+/* ------------------------------------ MEDIA QUERIES */
+
+/* large devices <1200px */
+@media (max-width: 1199px) { 
+	p#currentword {
+		font-size: 25px;
+	}
+}
+
+/* medium devices <992px */
+@media (max-width: 991px) { 
+	p#currentword {
+		font-size: 20px;
+	}
+}
+
+/* small devices <768px */
+@media (max-width: 767px) { 
+	p#currentword {
+		font-size: 15px;
+	}
+}
+
+/* tiny devices < 576px */
+@media (max-width: 575px) { 
+	h1 {
+		margin-top: -20px;
+		font-size: 30px;
+	}
+}

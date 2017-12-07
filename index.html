@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<head>
+		<title>Hangman Game</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<!-- SCRIPTS -->
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+		<!-- FONTS -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marvel">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+	</head>
+
+	<div class="container">
+		<body>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<img class="img-responsive" id="logo" src="assets/images/avengers-logo.jpg" alt="logo"/>
+					<h1>Hangman Game</h1>
+				</div>
+
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<h2>Instructions</h2>
+					<p><b>The category is:</b> characters in <i>Avengers Infinity War</i>.</p> 
+					<p><b>Click the screen to begin each new round,</b> then press any key to begin guessing lowercase letters. A period denotes a space in the character's name. Hyphens have already been included.</p> 
+					<p>You will have <b>15 attempts</b> to guess each character. Attempts will reset each time you correctly identify a character.</p> 
+					<p><b>GOOD LUCK AND HAVE FUN!</b></p> 
+				</div>
+			</div>
+
+			<div class="row">	
+				<div class="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
+
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div id="victory">
+						<img class="img-responsive" id="charpic" src="assets/images/infinity-war.jpg" alt="charpic"/>
+					</div>
+				</div>
+
+				<div class="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
+
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<h2>Wins: <span id="wincount"></span></h2>
+
+					<h3>Current Word</h3>
+					<p id="currentword"></p>
+
+					<p><b>Number of Guesses Remaining: <span id="guesscount"></span></b></p>
+
+					<p><b>Incorrect Letters Already Guessed: <span id="alreadyguessed"></span></b></p>
+				</div>
+			</div> <!-- end of row -->
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<footer>
+						<p id="disclaimer">All characters, images, and titles are trademarks&trade; or registered trademarks&reg; of their respective holders. Use of them does not imply any affiliation with or endorsement by them.</p>
+					</footer>
+				</div> <!-- column -->
+			</div> <!-- row -->
+		</body>
+	</div> <!-- container -->
+</html>
