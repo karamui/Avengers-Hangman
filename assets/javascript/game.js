@@ -100,9 +100,8 @@ function hangmanGame() {
 		if (guesses == 0) {
 			updateScreen();
 			alert("Sorry, you have run out of guesses! You lose!");
-			alert("Refresh this page to try again!");
-
-			return;
+			alert("Would you like to try again?");
+			location.reload();
 		}
 
 		// if the user correctly guesses the character, they win the game and move onto the next character
@@ -111,11 +110,6 @@ function hangmanGame() {
 			imageSelect();
 			updateScreen();
 			alert("Correct! This character was " + characterPrint[selector] + "!");
-
-			if (win == 50) {
-				alert("Why are you so good at this game?");
-			}
-
 			reset();
 		} 
 
@@ -239,5 +233,6 @@ function updateScreen() {
 }
 
 // ------------------------------------ RUN GAME!
+
 reset();
 hangmanGame();
