@@ -50,23 +50,21 @@ function reset() {
 		}
 	}
 
-	// displaying hidden character and win count on page startup
-	window.onclick = function(startUp) {
-		// concealing the selected character's letters
-		for (i = 0; i < character.length; i++) {
-			if (character[i] == " ") {
-				currentGuess[i] = ".";
-			}
-			else if (character[i] == "-") {
-				currentGuess[i] = "-";
-			}
-			else {
-				currentGuess[i] = "_"; 
-			}
+	// concealing the selected character's letters
+	for (i = 0; i < character.length; i++) {
+		if (character[i] == " ") {
+			currentGuess[i] = ".";
 		}
+		else if (character[i] == "-") {
+			currentGuess[i] = "-";
+		}
+		else {
+			currentGuess[i] = "_"; 
+		}
+	}
 
-		updateScreen();
-	};
+	updateScreen();
+	
 }
 
 // ------------------------------------ HANGMANGAME FUNCTION
@@ -102,18 +100,14 @@ function hangmanGame() {
 		// if the user runs out of guesses, they lose the game
 		if (guesses == 0) {
 			updateScreen();
-			alert("Sorry, you have run out of guesses! You lose!");
-			alert("Would you like to try again?");
-			location.reload();
+			setTimeout(delayLose, 100);
 		}
-
 		// if the user correctly guesses the character, they win the game and move onto the next character
 		if (currentGuess.join(" ") === correctAnswer.join(" ")) {
 			win++;
 			imageSelect();
 			updateScreen();
-			alert("Correct! This character was " + characterArray[selector] + "!");
-			reset();
+			setTimeout(delayWin, 100);
 		} 
 
 		updateScreen();
@@ -233,6 +227,22 @@ function updateScreen() {
 	currentword.textContent = currentGuess.join(" ");
 	guesscount.textContent = guesses;
 	alreadyguessed.textContent = letterArray.join(" ");
+}
+
+// ------------------------------------ DELAYWIN FUNCTION
+// delays code so user can appreciate having guessed the correct character
+
+function delayWin() {
+	alert("Correct! This character was " + characterArray[selector] + "!");
+	reset();
+}
+
+// ------------------------------------ DELAYLOSE FUNCTION
+// delays code so user can see that they have lost the game
+function delayLose() {
+	alert("Sorry, you have run out of guesses! You lose!");
+	alert("Would you like to try again?");
+	location.reload();
 }
 
 // ------------------------------------ RUN GAME!
