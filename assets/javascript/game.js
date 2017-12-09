@@ -7,7 +7,7 @@ correctAnswer - correct answer array for comparison purposes
 currentGuess - user's progress towards guessing the current word
 currentword - current word (letters, blanks, hyphens, periods) (document)
 i - index 
-imageSelect - replaces current on-screen image with new character image 
+imageSource - source links for images 
 img - image variable
 guesses - number of guesses remaining
 guessflag - triggered when user guesses a correct letter (false -> true)
@@ -20,6 +20,7 @@ wincount - win counter (document) */
 // ------------------------------------ declaring global variables
 
 var characterArray = ["Black Panther", "Stan Lee", "Falcon", "The Vision", "Scarlet Witch", "Thor", "Captain America", "Wong", "Iron Patriot", "Nebula", "Hawkeye", "Thanos", "Hulk", "Spider-Man", "Nick Fury", "Groot", "Captain Marvel", "Black Widow", "Odin", "Winter Soldier", "Rocket Raccoon", "Loki", "Drax the Destroyer", "Iron Man", "Maria Hill", "Doctor Strange", "Gamora", "Star-Lord"];
+var imageSource = ["assets/images/black-panther.jpg", "assets/images/stan-lee.jpg", "assets/images/falcon.jpg", "assets/images/the-vision.jpg", "assets/images/scarlet-witch.jpg", "assets/images/thor.jpg", "assets/images/captain-america.jpg", "assets/images/wong.jpg", "assets/images/iron-patriot.jpg", "assets/images/nebula.jpg", "assets/images/hawkeye.jpg", "assets/images/thanos.jpg", "assets/images/hulk.jpg", "assets/images/spider-man.jpg", "assets/images/nick-fury.jpg", "assets/images/groot.jpg", "assets/images/captain-marvel.jpg", "assets/images/black-widow.jpg", "assets/images/odin.jpg", "assets/images/winter-soldier.jpg", "assets/images/rocket-raccoon.jpg", "assets/images/loki.jpg", "assets/images/drax-the-destroyer.jpg", "assets/images/iron-man.jpg", "assets/images/maria-hill.jpg", "assets/images/doctor-strange.jpg", "assets/images/gamora.jpg", "assets/images/star-lord.jpg", "assets/images/infinity-war.jpg"]
 var i = 0;
 var win = 0;
 
@@ -105,7 +106,7 @@ function hangmanGame() {
 		// if the user correctly guesses the character, they win the game and move onto the next character
 		if (currentGuess.join(" ") === correctAnswer.join(" ")) {
 			win++;
-			imageSelect();
+			document.getElementById("charpic").src=imageSource[selector];
 			updateScreen();
 			setTimeout(delayWin, 100);
 		} 
@@ -116,100 +117,6 @@ function hangmanGame() {
 				alert("Why are you so good at this game?");
 			}
 	}; 
-}
-
-// ------------------------------------ IMAGESELECT FUNCTION
-// replace current image with image of correctly guessed character
-
-function imageSelect() {
-	// replacing image
-	if (selector == 0) {
-		document.getElementById("charpic").src="assets/images/black-panther.jpg";
-	}
-	else if (selector == 1) {
-		document.getElementById("charpic").src="assets/images/stan-lee.jpg";
-	}
-	else if (selector == 2) {
-		document.getElementById("charpic").src="assets/images/falcon.jpg";
-	}
-	else if (selector == 3) {
-		document.getElementById("charpic").src="assets/images/the-vision.jpg";
-	}
-	else if (selector == 4) {
-		document.getElementById("charpic").src="assets/images/scarlet-witch.jpg";
-	}
-	else if (selector == 5) {
-		document.getElementById("charpic").src="assets/images/thor.jpg";
-	}
-	else if (selector == 6) {
-		document.getElementById("charpic").src="assets/images/captain-america.jpg";
-	}
-	else if (selector == 7) {
-		document.getElementById("charpic").src="assets/images/wong.jpg";
-	}
-	else if (selector == 8) {
-		document.getElementById("charpic").src="assets/images/iron-patriot.jpg";
-	}
-	else if (selector == 9) {
-		document.getElementById("charpic").src="assets/images/nebula.jpg";
-	}
-	else if (selector == 10) {
-		document.getElementById("charpic").src="assets/images/hawkeye.jpg";
-	}
-	else if (selector == 11) {
-		document.getElementById("charpic").src="assets/images/thanos.jpg";
-	}
-	else if (selector == 12) {
-		document.getElementById("charpic").src="assets/images/hulk.jpg";
-	}
-	else if (selector == 13) {
-		document.getElementById("charpic").src="assets/images/spider-man.jpg";
-	}
-	else if (selector == 14) {
-		document.getElementById("charpic").src="assets/images/nick-fury.jpg";
-	}
-	else if (selector == 15) {
-		document.getElementById("charpic").src="assets/images/groot.jpg";
-	}
-	else if (selector == 16) {
-		document.getElementById("charpic").src="assets/images/captain-marvel.jpg";
-	}
-	else if (selector == 17) {
-		document.getElementById("charpic").src="assets/images/black-widow.jpg";
-	}
-	else if (selector == 18) {
-		document.getElementById("charpic").src="assets/images/odin.jpg";
-	}
-	else if (selector == 19) {
-		document.getElementById("charpic").src="assets/images/winter-soldier.jpg";
-	}
-	else if (selector == 20) {
-		document.getElementById("charpic").src="assets/images/rocket-raccoon.jpg";
-	}
-	else if (selector == 21) {
-		document.getElementById("charpic").src="assets/images/loki.jpg";
-	}
-	else if (selector == 22) {
-		document.getElementById("charpic").src="assets/images/drax-the-destroyer.jpg";
-	}
-	else if (selector == 23) {
-		document.getElementById("charpic").src="assets/images/iron-man.jpg";
-	}
-	else if (selector == 24) {
-		document.getElementById("charpic").src="assets/images/maria-hill.jpg";
-	}
-	else if (selector == 25) {
-		document.getElementById("charpic").src="assets/images/doctor-strange.jpg";
-	}
-	else if (selector == 26) {
-		document.getElementById("charpic").src="assets/images/gamora.jpg";
-	}
-	else if (selector == 27) {
-		document.getElementById("charpic").src="assets/images/star-lord.jpg";
-	}
-	else {
-		document.getElementById("charpic").src="assets/images/infinity-war.jpg";
-	}
 }
 
 // ------------------------------------ UPDATESCREEN FUNCTION
