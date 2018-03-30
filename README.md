@@ -1,4 +1,4 @@
-# Hangman-Game
+# *Avengers: Infinity War* Hangman Game
 A fully-responsive JavaScript hangman game based on Avengers: Infinity War.
 
 # Instructions
