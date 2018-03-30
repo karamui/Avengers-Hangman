@@ -103,6 +103,7 @@ function hangmanGame() {
 			updateScreen();
 			setTimeout(delayLose, 100);
 		}
+
 		// if the user correctly guesses the character, they win the game and move onto the next character
 		if (currentGuess.join(" ") === correctAnswer.join(" ")) {
 			win++;
@@ -114,8 +115,8 @@ function hangmanGame() {
 		updateScreen();
 
 		if (win == 50) {
-				alert("Why are you so good at this game?");
-			}
+			alert("Why are you so good at this game?");
+		}
 	}; 
 }
 
@@ -146,6 +147,7 @@ function delayWin() {
 
 // ------------------------------------ DELAYLOSE FUNCTION
 // delays code so user can see that they have lost the game
+
 function delayLose() {
 	alert("Sorry, you have run out of guesses! You lose!");
 	alert("Would you like to try again?");
